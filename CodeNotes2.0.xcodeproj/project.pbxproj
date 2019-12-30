@@ -18,6 +18,7 @@
 		D576F89323B699AE00F75E12 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F89223B699AE00F75E12 /* PageViewController.swift */; };
 		D58D86B323B6C0C900D366F0 /* CreateNewSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */; };
 		D58D86B523B723B300D366F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58D86B423B723B300D366F0 /* Assets.xcassets */; };
+		D5EC4C9C23B80B420045420F /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EC4C9B23B80B420045420F /* NotificationNameExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D576F89223B699AE00F75E12 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewSubjectViewController.swift; sourceTree = "<group>"; };
 		D58D86B423B723B300D366F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5EC4C9B23B80B420045420F /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +110,13 @@
 				D58D86B423B723B300D366F0 /* Assets.xcassets */,
 				D576F86423B6965B00F75E12 /* Main.storyboard */,
 				D576F85E23B6965B00F75E12 /* AppDelegate.swift */,
-				D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */,
 				D576F86223B6965B00F75E12 /* ViewController.swift */,
+				D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */,
 				D576F89023B698AD00F75E12 /* NotesMenuViewController.swift */,
 				D576F89223B699AE00F75E12 /* PageViewController.swift */,
 				D576F86023B6965B00F75E12 /* SceneDelegate.swift */,
 				D576F86923B6965F00F75E12 /* LaunchScreen.storyboard */,
+				D5EC4C9B23B80B420045420F /* NotificationNameExtension.swift */,
 				D576F86C23B6965F00F75E12 /* Info.plist */,
 			);
 			path = CodeNotes2.0;
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EC4C9C23B80B420045420F /* NotificationNameExtension.swift in Sources */,
 				D58D86B323B6C0C900D366F0 /* CreateNewSubjectViewController.swift in Sources */,
 				D576F86323B6965B00F75E12 /* ViewController.swift in Sources */,
 				D576F89323B699AE00F75E12 /* PageViewController.swift in Sources */,

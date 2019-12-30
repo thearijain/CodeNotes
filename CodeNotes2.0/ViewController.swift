@@ -17,7 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(forName: .loadNotebookData, object: nil, queue: OperationQueue.main) { (notification) in
+                print(notebookName)
+            }
     }
+    
+    
 
     //Creates new notebook
 //    @IBAction func addNotebook(_ sender: UIButton) {

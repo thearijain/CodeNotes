@@ -6,49 +6,33 @@
 //  Copyright © 2019 Arihant Jain. All rights reserved.
 //
 
+//Global variables
+var notebookName = ""
+
+
 import UIKit
 
-class CreateNewSubjectViewController: UIViewController {
+class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
+    
     //Variables
-
-    @IBOutlet weak var nameOfSubject: UITextField!{ didSet { nameOfSubject.delegate = self as? UITextFieldDelegate } }
+    @IBOutlet weak var nameOfSubject: UITextField!{ didSet { nameOfSubject.delegate = self as UITextFieldDelegate } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configuretextFields()
+        
+        //Makes keyboard close when you click anywhere on screen
         configureTapGesture()
-        // Do any additional setup after loading the view.
     
-        
-//        let placeHolder = NSMutableAttributedString()
-//        let Name  = "Placeholder Text"
-//
-//
-//        // Set the color
-//        placeHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range:NSRange(location:0,length:Name.count))
-//
-//        // Add attribute
-//        nameOfSubject.attributedPlaceholder = placeHolder
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func doneButtonTapped(_ sender: Any) {
-        
+        notebookName = nameOfSubject.text!
+        NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
+        dismiss(animated: true, completion: nil)
     }
     
-    private func configuretextFields() {
-        nameOfSubject.delegate = self as? UITextFieldDelegate
-    }
-    
+
+    //Next two functions makes keyboard close when you click anywhere on screen
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateNewSubjectViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
@@ -57,12 +41,10 @@ class CreateNewSubjectViewController: UIViewController {
     @objc func handleTap() {
         view.endEditing(true)
     }
+
+    //Makes keyboard close when you click return button on keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
-
-
-//extension ViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
