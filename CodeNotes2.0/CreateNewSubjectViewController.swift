@@ -26,9 +26,13 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {
-        notebookName = nameOfSubject.text!
-        NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
-        dismiss(animated: true, completion: nil)
+        if let text = nameOfSubject.text, text.isEmpty {
+            nameOfSubject.shake()
+        } else {
+            notebookName = nameOfSubject.text!
+            NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 
@@ -46,5 +50,24 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    //Closes overlay if you click outside the popup
+    @IBAction func dismissPopUp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+//Makes text field shake when there is no user input
+extension UITextField {
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: self.center.x - 8.0, y: self.center.y)
+        animation.toValue = CGPoint(x: self.center.x + 8.0, y: self.center.y)
+        layer.add(animation, forKey: "position")
     }
 }

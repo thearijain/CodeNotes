@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-lC-7Tv">
-                                <rect key="frame" x="702" y="15" width="111" height="67"/>
+                                <rect key="frame" x="20" y="16" width="111" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="EditButton"/>
                             </button>
@@ -24,14 +24,6 @@
                                 <rect key="frame" x="55" y="120" width="205" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="notebook"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTH-Yt-dmv" userLabel="Add">
-                                <rect key="frame" x="27" y="19" width="63" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Add_Button"/>
-                                <connections>
-                                    <segue destination="tCW-5X-sNr" kind="presentation" id="wNf-uB-XxD"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Code Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rn5-hb-oSp">
                                 <rect key="frame" x="339" y="27" width="156" height="45"/>
@@ -54,6 +46,14 @@
                                 <color key="textColor" red="0.78823524710000004" green="0.78823536630000002" blue="0.78823524710000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTH-Yt-dmv" userLabel="Add">
+                                <rect key="frame" x="753" y="18" width="63" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Add_Button"/>
+                                <connections>
+                                    <segue destination="tCW-5X-sNr" kind="presentation" id="wNf-uB-XxD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16859254239999999" green="0.16470801830000001" blue="0.16470575330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="K5G-jD-C59"/>
@@ -96,6 +96,21 @@
                                     <action selector="doneButtonTapped:" destination="tCW-5X-sNr" eventType="touchUpInside" id="918-eX-pvH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-Et-EM5">
+                                <rect key="frame" x="515" y="324" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="XButton"/>
+                                <connections>
+                                    <action selector="dismissPopUp:" destination="tCW-5X-sNr" eventType="touchUpInside" id="1PO-e0-DsS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-hm-EV2">
+                                <rect key="frame" x="325" y="370" width="170" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DJJ-jL-RUd"/>
@@ -216,6 +231,7 @@
         <image name="PencilButton" width="58" height="55"/>
         <image name="ScissorButton" width="58" height="55"/>
         <image name="UploadButton" width="58" height="55"/>
+        <image name="XButton" width="66" height="63"/>
         <image name="notebook" width="239" height="314"/>
     </resources>
 </document>
