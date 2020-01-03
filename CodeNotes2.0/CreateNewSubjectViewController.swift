@@ -7,7 +7,7 @@
 //
 
 //Global variables
-var notebookName = ""
+//var notebookName = ""
 
 
 import UIKit
@@ -15,8 +15,15 @@ import UIKit
 class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     
     //Variables
+    var notebookName = Notebooks()
+
     @IBOutlet weak var nameOfSubject: UITextField!{ didSet { nameOfSubject.delegate = self as UITextFieldDelegate } }
     
+    //Variables for coreData implementation
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +36,7 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
         if let text = nameOfSubject.text, text.isEmpty {
             nameOfSubject.shake()
         } else {
-            notebookName = nameOfSubject.text!
+            notebookName! = nameOfSubject.text!
             NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
             dismiss(animated: true, completion: nil)
         }
