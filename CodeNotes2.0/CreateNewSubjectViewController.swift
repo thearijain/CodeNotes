@@ -36,7 +36,7 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
         if let text = nameOfSubject.text, text.isEmpty {
             nameOfSubject.shake()
         } else {
-            notebookName! = nameOfSubject.text!
+            notebookName = nameOfSubject.text!
             NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
             dismiss(animated: true, completion: nil)
         }
