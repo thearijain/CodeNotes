@@ -15,12 +15,13 @@ import UIKit
 class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     
     //Variables
-    var notebookName = Notebooks()
+    var notebookName = String?("")
 
     @IBOutlet weak var nameOfSubject: UITextField!{ didSet { nameOfSubject.delegate = self as UITextFieldDelegate } }
     
     //Variables for coreData implementation
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //viewDidLoad
@@ -36,8 +37,9 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
         if let text = nameOfSubject.text, text.isEmpty {
             nameOfSubject.shake()
         } else {
-            //notebookName = nameOfSubject.text!
-            NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
+            notebookName = nameOfSubject.text!
+            print(notebookName!)
+//            NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
             dismiss(animated: true, completion: nil)
         }
     }
@@ -62,6 +64,10 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     //Closes overlay if you click outside the popup
     @IBAction func dismissPopUp(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func getNotebookName() -> String {
+        return notebookName!
     }
     
 }
