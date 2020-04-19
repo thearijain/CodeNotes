@@ -18,11 +18,7 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     var notebookName = String?("")
 
     @IBOutlet weak var nameOfSubject: UITextField!{ didSet { nameOfSubject.delegate = self as UITextFieldDelegate } }
-    
-    //Variables for coreData implementation
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+  
     
     //viewDidLoad
     override func viewDidLoad() {
