@@ -20,8 +20,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("hi")
+        NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
+            self.updateUI()
+        }
     }
+    
+    func updateUI() {
+        print("updated")
+    }
+    
 }
 
 struct Notebook {
