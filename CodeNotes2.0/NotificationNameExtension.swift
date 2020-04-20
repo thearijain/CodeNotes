@@ -10,6 +10,6 @@ import Foundation
 
 extension Notification.Name {
     
-    static let loadNotebookData = Notification.Name(rawValue: "loadNotebookData")
+    static let updateInterface = Notification.Name(rawValue: "updateInterface")
 
 }

@@ -38,7 +38,8 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
             let newNotebook = Notebook(notebookName: nameOfSubject.text!, date: Date())
             arrayOfNotebooks.append(newNotebook)
             setOfNotebookNames.insert(nameOfSubject.text!)
-            
+            //call updateUI()
+            NotificationCenter.default.post(name: Notification.Name.updateInterface, object: self)
             dismiss(animated: true, completion: nil)
             
         }
