@@ -14,6 +14,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     //Creates the CodeNotes header at the top of the collectionView
@@ -30,6 +32,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         let numberOfItemsPerRow:CGFloat = 3
         let _:CGFloat = 120
         let totalSpacing = (CollectionViewOutlet.frame.size.width - 36 - 240) / 3
+        
 
 
         if let collection = self.collectionView{
