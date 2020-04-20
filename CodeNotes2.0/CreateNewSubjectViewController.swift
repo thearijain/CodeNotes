@@ -32,11 +32,15 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     @IBAction func doneButtonTapped(_ sender: Any) {
         if let text = nameOfSubject.text, text.isEmpty {
             nameOfSubject.shake()
+        } else if (setOfNotebookNames.contains(nameOfSubject.text!)) {
+            nameOfSubject.shake()
         } else {
-            notebookName = nameOfSubject.text!
-            print(notebookName!)
-//            NotificationCenter.default.post(name: Notification.Name.loadNotebookData, object: self)
+            let newNotebook = Notebook(notebookName: nameOfSubject.text!, date: Date())
+            arrayOfNotebooks.append(newNotebook)
+            setOfNotebookNames.insert(nameOfSubject.text!)
+            
             dismiss(animated: true, completion: nil)
+            
         }
     }
     
