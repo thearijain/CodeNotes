@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct Notebook {
+    var notebookName = String?("")
+    var date = Date()
+}
+
 var arrayOfNotebooks: [Notebook] = []
 var setOfNotebookNames = Set<String>()
 
@@ -20,6 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if (arrayOfNotebooks.count == 0) {
+            let newNotebook = Notebook(notebookName: "Unfiled Notes", date: Date())
+            arrayOfNotebooks.append(newNotebook)
+            setOfNotebookNames.insert("Unfiled Notes")
+        }
+        //Updates the UI
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUI()
         }
@@ -29,10 +40,5 @@ class ViewController: UIViewController {
         print("updated")
     }
     
-}
-
-struct Notebook {
-    var notebookName = String?("")
-    var date = Date()
 }
 
