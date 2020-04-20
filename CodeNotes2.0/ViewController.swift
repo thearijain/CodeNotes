@@ -17,10 +17,6 @@ var arrayOfNotebooks: [Notebook] = []
 var setOfNotebookNames = Set<String>()
 
 class ViewController: UIViewController {
-
-    //Variables
-    @IBOutlet var UntitledNotesNtbk: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +33,19 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
+        print("updated")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as UICollectionViewCell
+        return cell
         
     }
+    
     
 }
 
