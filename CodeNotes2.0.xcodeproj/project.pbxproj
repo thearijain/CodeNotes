@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5152407244D525600E900B3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152406244D525600E900B3 /* CollectionViewController.swift */; };
 		D576F85F23B6965B00F75E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F85E23B6965B00F75E12 /* AppDelegate.swift */; };
 		D576F86123B6965B00F75E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F86023B6965B00F75E12 /* SceneDelegate.swift */; };
 		D576F86323B6965B00F75E12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F86223B6965B00F75E12 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5152406244D525600E900B3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D576F85B23B6965B00F75E12 /* CodeNotes2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeNotes2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D576F85E23B6965B00F75E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D576F86023B6965B00F75E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				D576F85E23B6965B00F75E12 /* AppDelegate.swift */,
 				D576F86223B6965B00F75E12 /* ViewController.swift */,
 				D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */,
+				D5152406244D525600E900B3 /* CollectionViewController.swift */,
 				D576F89023B698AD00F75E12 /* NotesMenuViewController.swift */,
 				D576F89223B699AE00F75E12 /* PageViewController.swift */,
 				D576F86023B6965B00F75E12 /* SceneDelegate.swift */,
@@ -298,6 +301,7 @@
 				D5B2944F23BEBA29009204FE /* CodeNotes2.0.xcdatamodeld in Sources */,
 				D576F85F23B6965B00F75E12 /* AppDelegate.swift in Sources */,
 				D576F86123B6965B00F75E12 /* SceneDelegate.swift in Sources */,
+				D5152407244D525600E900B3 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

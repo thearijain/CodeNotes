@@ -8,18 +8,25 @@
 
 import UIKit
 
+struct Notebook {
+    var notebookName = String?("")
+    var date = Date()
+}
+
 var arrayOfNotebooks: [Notebook] = []
 var setOfNotebookNames = Set<String>()
 
 class ViewController: UIViewController {
-
-    //Variables
-    @IBOutlet var UntitledNotesNtbk: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if (arrayOfNotebooks.count == 0) {
+            let newNotebook = Notebook(notebookName: "Unfiled Notes", date: Date())
+            arrayOfNotebooks.append(newNotebook)
+            setOfNotebookNames.insert("Unfiled Notes")
+        }
+        //Updates the UI
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUI()
         }
@@ -29,10 +36,16 @@ class ViewController: UIViewController {
         print("updated")
     }
     
-}
-
-struct Notebook {
-    var notebookName = String?("")
-    var date = Date()
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as UICollectionViewCell
+        return cell
+        
+    }
+    
+    
 }
 

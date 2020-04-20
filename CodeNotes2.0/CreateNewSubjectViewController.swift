@@ -35,10 +35,12 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
         } else if (setOfNotebookNames.contains(nameOfSubject.text!)) {
             nameOfSubject.shake()
         } else {
+            //Creates new notebook and adds it to the list of notebooks and name to the set of names
             let newNotebook = Notebook(notebookName: nameOfSubject.text!, date: Date())
             arrayOfNotebooks.append(newNotebook)
             setOfNotebookNames.insert(nameOfSubject.text!)
-            //call updateUI()
+            
+            //Updates the UI
             NotificationCenter.default.post(name: Notification.Name.updateInterface, object: self)
             dismiss(animated: true, completion: nil)
             
