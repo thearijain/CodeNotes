@@ -8,8 +8,10 @@
 
 import UIKit
 
-class CollectionViewController: UICollectionViewController {
-
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet var CollectionViewOutlet: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,6 +26,20 @@ class CollectionViewController: UICollectionViewController {
         fatalError()
     }
         
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow:CGFloat = 3
+        let _:CGFloat = 120
+        let totalSpacing = (CollectionViewOutlet.frame.size.width - 36 - 240) / 3
+
+
+        if let collection = self.collectionView{
+            let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+            return CGSize(width: width, height: width)
+        }else{
+            return CGSize(width: 0, height: 0)
+        }
+    }
+
         
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10

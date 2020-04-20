@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4L-IF-sxw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4L-IF-sxw">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -240,7 +240,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21881225709999999" green="0.21459782120000001" blue="0.21447747950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DTA-T5-yvu">
+                        <inset key="scrollIndicatorInsets" minX="18" minY="18" maxX="18" maxY="18"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="100" minimumInteritemSpacing="70" id="DTA-T5-yvu">
                             <size key="itemSize" width="340" height="184"/>
                             <size key="headerReferenceSize" width="50" height="103"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -275,13 +276,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-P4-b0u">
                                     <rect key="frame" x="0.0" y="0.0" width="834" height="103"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HqF-eQ-QQO">
-                                            <rect key="frame" x="336" y="27" width="161" height="49"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-YQ-P0F">
                                             <rect key="frame" x="20" y="16" width="111" height="67"/>
                                             <constraints>
@@ -290,15 +284,24 @@
                                             <state key="normal" image="EditButton"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-wI-1rv" userLabel="Add">
-                                            <rect key="frame" x="753" y="18" width="63" height="60"/>
+                                            <rect key="frame" x="753" y="18" width="63" height="61"/>
                                             <state key="normal" image="Add_Button"/>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KR2-C9-SUc">
+                                            <rect key="frame" x="339" y="26" width="156" height="45"/>
+                                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.20038461690000001" green="0.1960995197" blue="0.19598150249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="JVz-YQ-P0F" firstAttribute="leading" secondItem="aRg-P4-b0u" secondAttribute="leading" constant="20" id="BAd-a5-cIJ"/>
+                                        <constraint firstItem="KR2-C9-SUc" firstAttribute="centerY" secondItem="xad-wI-1rv" secondAttribute="centerY" id="BFp-Z0-dVn"/>
+                                        <constraint firstItem="KR2-C9-SUc" firstAttribute="centerX" secondItem="aRg-P4-b0u" secondAttribute="centerX" id="F1b-Wz-uqZ"/>
                                         <constraint firstAttribute="bottom" secondItem="JVz-YQ-P0F" secondAttribute="bottom" constant="20" id="FrE-LT-duu"/>
                                         <constraint firstItem="JVz-YQ-P0F" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="16" id="PA8-fO-C81"/>
+                                        <constraint firstItem="KR2-C9-SUc" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="26" id="QdG-bk-ljL"/>
                                         <constraint firstAttribute="trailing" secondItem="xad-wI-1rv" secondAttribute="trailing" constant="18" id="kit-qf-aBf"/>
                                         <constraint firstItem="xad-wI-1rv" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="18" id="t4r-LW-ZPD"/>
                                     </constraints>
@@ -317,6 +320,9 @@
                             <outlet property="delegate" destination="Q4L-IF-sxw" id="sxp-oW-0iC"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="CollectionViewOutlet" destination="Z2u-hi-67A" id="TWx-Gk-htv"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQv-Ge-puI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
