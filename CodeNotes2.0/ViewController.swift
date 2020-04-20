@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         if (arrayOfNotebooks.count == 0) {
             let newNotebook = Notebook(notebookName: "Unfiled Notes", date: Date())
             arrayOfNotebooks.append(newNotebook)
