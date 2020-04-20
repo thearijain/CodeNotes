@@ -8,19 +8,24 @@
 
 import UIKit
 
+var arrayOfNotebooks: [Notebook] = []
+var setOfNotebookNames = Set<String>()
+
 class ViewController: UIViewController {
 
     //Variables
-//    @IBOutlet var addNotebookButton: UIButton!
     @IBOutlet var UntitledNotesNtbk: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        NotificationCenter.default.addObserver(forName: .loadNotebookData, object: nil, queue: OperationQueue.main) { (notification) in
-            print(CreateNewSubjectViewController.getNotebookName)
-            }
+        print("hi")
     }
+}
+
+struct Notebook {
+    var notebookName = String?("")
+    var date = Date()
 }
 
