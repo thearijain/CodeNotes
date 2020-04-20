@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        print("updated")
+        
     }
     
 }
