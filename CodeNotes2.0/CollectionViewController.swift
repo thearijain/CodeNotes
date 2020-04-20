@@ -14,6 +14,17 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
     }
     
+    //Creates the CodeNotes header at the top of the collectionView
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+            // Customize headerView here
+            return headerView
+        }
+        fatalError()
+    }
+        
+        
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
