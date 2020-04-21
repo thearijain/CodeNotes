@@ -254,13 +254,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-5x-hRq">
+                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-5x-hRq">
                                             <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" backgroundImage="notebook"/>
+                                            <state key="normal" image="notebook"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="6ZU-5x-hRq" firstAttribute="width" secondItem="vJj-Hf-E6K" secondAttribute="height" multiplier="239:314" id="9aG-db-8mq"/>
+                                        <constraint firstItem="6ZU-5x-hRq" firstAttribute="height" secondItem="vJj-Hf-E6K" secondAttribute="height" id="Lh9-S0-hj4"/>
+                                        <constraint firstItem="6ZU-5x-hRq" firstAttribute="width" secondItem="vJj-Hf-E6K" secondAttribute="width" id="Yf9-e1-EEX"/>
+                                        <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerY" secondItem="vJj-Hf-E6K" secondAttribute="centerY" id="tCL-cl-5yJ"/>
+                                        <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerX" secondItem="vJj-Hf-E6K" secondAttribute="centerX" id="w6r-wQ-dIj"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="239" height="314"/>
