@@ -17,20 +17,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout // If you create collectionView programmatically then just create this flow by UICollectionViewFlowLayout() and init a collectionView by this flow.
 
-           let itemSpacing: CGFloat = 100
-           let itemsInOneLine: CGFloat = 3
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-           flow.itemSize = CGSize(width: 239, height: 3140)
-           flow.minimumInteritemSpacing = 0
+//           flow.itemSize = CGSize(width: 239, height: 3140)
+//           flow.minimumInteritemSpacing = 0
            flow.minimumLineSpacing = 50
         
     }
-    
-    //This sets cell size
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 239, height: 314)
-    }
-    
+   
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
@@ -48,8 +41,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         let totalSpacing = (CollectionViewOutlet.frame.size.width - 36 - 240) / 3
         if let collection = self.collectionView{
             let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
-            return CGSize(width: width, height: width)
+            print("ONE")
+            return CGSize(width: 239, height: 314)
         }else{
+            print("TWO")
             return CGSize(width: 0, height: 0)
         }
     }
