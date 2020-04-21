@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywM-Us-5Ub">
-                                <rect key="frame" x="225" y="212" width="384" height="305"/>
+                                <rect key="frame" x="225" y="403.5" width="384" height="305"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreateNewNotebook" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-6H-Wey">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="305"/>
@@ -59,15 +59,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="384" id="S6k-P3-ZMc"/>
-                                    <constraint firstAttribute="height" constant="305" id="lTa-VP-2rR"/>
+                                    <constraint firstAttribute="height" constant="305" id="FQv-Ut-tFV"/>
+                                    <constraint firstAttribute="width" constant="384" id="wOq-ip-iSz"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="top" secondItem="DJJ-jL-RUd" secondAttribute="top" constant="212" id="FC4-kM-E0e"/>
-                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="centerX" secondItem="DJJ-jL-RUd" secondAttribute="centerX" id="oz1-Bl-ccx"/>
+                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="centerX" secondItem="DJJ-jL-RUd" secondAttribute="centerX" id="EJr-VE-Wmm"/>
+                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="centerY" secondItem="DJJ-jL-RUd" secondAttribute="centerY" id="M0q-Cf-7wY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DJJ-jL-RUd"/>
                     </view>
