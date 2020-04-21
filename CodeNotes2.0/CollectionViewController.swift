@@ -33,7 +33,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
     //Sets the size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((CollectionViewOutlet.frame.size.width - 100) / 4.2), height: ((CollectionViewOutlet.frame.size.height - 100) / 4))
+        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
     }
     
     
