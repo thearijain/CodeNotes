@@ -59,7 +59,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Returns number of notebooks to put into the collectionView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return arrayOfNotebooks.count
     }
     
     //Returns the cell object built on the main storyboard
@@ -70,6 +70,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Updates the UI of the homepage
     func updateUI() {
-        print("updated")
+        CollectionViewOutlet.reloadData()
+        print(setOfNotebookNames)
     }
 }

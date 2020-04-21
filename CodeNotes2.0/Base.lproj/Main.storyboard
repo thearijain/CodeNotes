@@ -16,55 +16,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreateNewNotebook" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-6H-Wey">
-                                <rect key="frame" x="234" y="320" width="366" height="305"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6i-32-RGi">
-                                <rect key="frame" x="263" y="420.5" width="288" height="46.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="27"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijW-x0-KPK">
-                                <rect key="frame" x="320" y="533" width="174" height="44"/>
-                                <state key="normal" image="CreateButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonTapped:" destination="tCW-5X-sNr" eventType="touchUpInside" id="918-eX-pvH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-Et-EM5">
-                                <rect key="frame" x="515" y="324" width="66" height="63"/>
-                                <state key="normal" image="XButton"/>
-                                <connections>
-                                    <action selector="dismissPopUp:" destination="tCW-5X-sNr" eventType="touchUpInside" id="1PO-e0-DsS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-hm-EV2">
-                                <rect key="frame" x="324" y="369.5" width="170" height="35"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywM-Us-5Ub">
+                                <rect key="frame" x="225" y="212" width="384" height="305"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreateNewNotebook" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-6H-Wey">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="305"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6i-32-RGi">
+                                        <rect key="frame" x="38" y="122" width="288" height="46.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="27"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijW-x0-KPK">
+                                        <rect key="frame" x="97" y="230" width="174" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="CreateButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="tCW-5X-sNr" eventType="touchUpInside" id="918-eX-pvH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-hm-EV2">
+                                        <rect key="frame" x="96" y="45" width="170" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-Et-EM5">
+                                        <rect key="frame" x="293" y="2" width="66" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="XButton"/>
+                                        <connections>
+                                            <action selector="dismissPopUp:" destination="tCW-5X-sNr" eventType="touchUpInside" id="1PO-e0-DsS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="384" id="S6k-P3-ZMc"/>
+                                    <constraint firstAttribute="height" constant="305" id="lTa-VP-2rR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KcG-hm-EV2" firstAttribute="trailing" secondItem="ijW-x0-KPK" secondAttribute="trailing" id="23y-tM-Z2Q"/>
-                            <constraint firstItem="DKN-6H-Wey" firstAttribute="leading" secondItem="DJJ-jL-RUd" secondAttribute="leading" constant="234" id="3DW-On-8BL"/>
-                            <constraint firstItem="ijW-x0-KPK" firstAttribute="leading" secondItem="DJJ-jL-RUd" secondAttribute="leading" constant="320" id="3wE-k0-KsK"/>
-                            <constraint firstItem="DJJ-jL-RUd" firstAttribute="bottom" secondItem="ijW-x0-KPK" secondAttribute="bottom" constant="535" id="CTD-7h-Tnp"/>
-                            <constraint firstItem="DJJ-jL-RUd" firstAttribute="bottom" secondItem="DKN-6H-Wey" secondAttribute="bottom" constant="487" id="Eq8-oY-mKF"/>
-                            <constraint firstItem="DKN-6H-Wey" firstAttribute="top" secondItem="DJJ-jL-RUd" secondAttribute="top" constant="320" id="Nto-Yp-X1a"/>
-                            <constraint firstItem="DJJ-jL-RUd" firstAttribute="trailing" secondItem="t6i-32-RGi" secondAttribute="trailing" constant="283" id="PGK-e1-VXM"/>
-                            <constraint firstItem="KcG-hm-EV2" firstAttribute="top" secondItem="DJJ-jL-RUd" secondAttribute="top" constant="369.5" id="Re5-tr-Jwu"/>
-                            <constraint firstItem="ijW-x0-KPK" firstAttribute="centerX" secondItem="t6i-32-RGi" secondAttribute="centerX" id="Z8l-KL-0ZP"/>
-                            <constraint firstItem="t6i-32-RGi" firstAttribute="leading" secondItem="DJJ-jL-RUd" secondAttribute="leading" constant="263" id="cZR-1L-SjF"/>
-                            <constraint firstItem="DKN-6H-Wey" firstAttribute="centerX" secondItem="QUN-ZU-wm4" secondAttribute="centerX" id="cff-bC-dJ0"/>
-                            <constraint firstItem="1Il-Et-EM5" firstAttribute="top" secondItem="DJJ-jL-RUd" secondAttribute="top" constant="324" id="g65-v4-caJ"/>
-                            <constraint firstItem="1Il-Et-EM5" firstAttribute="leading" secondItem="KcG-hm-EV2" secondAttribute="trailing" constant="21" id="wQu-9z-avT"/>
-                            <constraint firstItem="ijW-x0-KPK" firstAttribute="top" secondItem="t6i-32-RGi" secondAttribute="bottom" constant="66" id="y3q-f6-ZXy"/>
+                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="top" secondItem="DJJ-jL-RUd" secondAttribute="top" constant="212" id="FC4-kM-E0e"/>
+                            <constraint firstItem="ywM-Us-5Ub" firstAttribute="centerX" secondItem="DJJ-jL-RUd" secondAttribute="centerX" id="oz1-Bl-ccx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DJJ-jL-RUd"/>
                     </view>
