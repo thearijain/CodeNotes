@@ -15,11 +15,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout // If you create collectionView programmatically then just create this flow by UICollectionViewFlowLayout() and init a collectionView by this flow.
-
+        let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-//           flow.itemSize = CGSize(width: 239, height: 3140)
-//           flow.minimumInteritemSpacing = 0
            flow.minimumLineSpacing = 50
         
     }
@@ -34,26 +31,15 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         fatalError()
     }
         
-    //Puts spacing between cells of the collectionView
+    //Sets the size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfItemsPerRow:CGFloat = 3
-        let _:CGFloat = 120
-        let totalSpacing = (CollectionViewOutlet.frame.size.width - 36 - 240) / 3
-        if let collection = self.collectionView{
-            let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
-            print("ONE")
-            return CGSize(width: 239, height: 314)
-        }else{
-            print("TWO")
-            return CGSize(width: 0, height: 0)
-        }
+        return CGSize(width: ((CollectionViewOutlet.frame.size.width - 100) / 4.2), height: ((CollectionViewOutlet.frame.size.height - 100) / 4))
     }
     
     
-
     //Returns number of notebooks in the collectionView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 11
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
