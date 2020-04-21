@@ -15,18 +15,18 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout // If you create collectionView programmatically then just create this flow by UICollectionViewFlowLayout() and init a collectionView by this flow.
-//
-//           let itemSpacing: CGFloat = 3
-//           let itemsInOneLine: CGFloat = 3
-//           flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//           let width = UIScreen.main.bounds.size.width - itemSpacing * CGFloat(itemsInOneLine - 1) //collectionView.frame.width is the same as  UIScreen.main.bounds.size.width here.
-//           flow.itemSize = CGSize(width: floor(width/itemsInOneLine), height: width/itemsInOneLine)
-//           flow.minimumInteritemSpacing = 3
-//           flow.minimumLineSpacing = 3
+        let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout // If you create collectionView programmatically then just create this flow by UICollectionViewFlowLayout() and init a collectionView by this flow.
+
+           let itemSpacing: CGFloat = 100
+           let itemsInOneLine: CGFloat = 3
+           flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+           flow.itemSize = CGSize(width: 239, height: 3140)
+           flow.minimumInteritemSpacing = 0
+           flow.minimumLineSpacing = 50
         
     }
     
+    //This sets cell size
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 239, height: 314)
     }
