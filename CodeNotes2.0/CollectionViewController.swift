@@ -20,7 +20,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
            let itemSpacing: CGFloat = 100
            let itemsInOneLine: CGFloat = 3
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-           flow.itemSize = CGSize(width: 239, height: 3140)
+           flow.itemSize = CGSize(width: 239, height: 314)
            flow.minimumInteritemSpacing = 0
            flow.minimumLineSpacing = 50
         
