@@ -203,12 +203,12 @@
                                                 <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-T8-SgH">
-                                            <rect key="frame" x="29" y="38" width="168" height="132"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-T8-SgH">
+                                            <rect key="frame" x="36" y="22" width="151" height="162"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="132" id="cDA-mr-shf"/>
+                                                <constraint firstAttribute="height" constant="162" id="cDA-mr-shf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -216,10 +216,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="width" secondItem="vJj-Hf-E6K" secondAttribute="height" multiplier="239:314" id="9aG-db-8mq"/>
-                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="top" secondItem="vJj-Hf-E6K" secondAttribute="top" constant="38" id="KMU-F5-T19"/>
-                                        <constraint firstAttribute="trailing" secondItem="RbJ-T8-SgH" secondAttribute="trailing" constant="42" id="W2F-Bc-Ymo"/>
+                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="top" secondItem="vJj-Hf-E6K" secondAttribute="top" constant="22" id="KMU-F5-T19"/>
+                                        <constraint firstAttribute="trailing" secondItem="RbJ-T8-SgH" secondAttribute="trailing" constant="52" id="W2F-Bc-Ymo"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="height" secondItem="vJj-Hf-E6K" secondAttribute="height" id="lEF-ft-7vJ"/>
-                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="leading" secondItem="vJj-Hf-E6K" secondAttribute="leadingMargin" constant="21" id="sq3-tj-u6N"/>
+                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="leading" secondItem="vJj-Hf-E6K" secondAttribute="leadingMargin" constant="28" id="sq3-tj-u6N"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerY" secondItem="vJj-Hf-E6K" secondAttribute="centerY" id="tCL-cl-5yJ"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerX" secondItem="vJj-Hf-E6K" secondAttribute="centerX" id="w6r-wQ-dIj"/>
                                     </constraints>
