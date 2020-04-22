@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F21888F244F9FF000BBDE13 /* NotebookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21888E244F9FF000BBDE13 /* NotebookCell.swift */; };
+		D5152407244D525600E900B3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152406244D525600E900B3 /* CollectionViewController.swift */; };
 		D576F85F23B6965B00F75E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F85E23B6965B00F75E12 /* AppDelegate.swift */; };
 		D576F86123B6965B00F75E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F86023B6965B00F75E12 /* SceneDelegate.swift */; };
-		D576F86323B6965B00F75E12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F86223B6965B00F75E12 /* ViewController.swift */; };
 		D576F86623B6965B00F75E12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D576F86423B6965B00F75E12 /* Main.storyboard */; };
 		D576F86B23B6965F00F75E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D576F86923B6965F00F75E12 /* LaunchScreen.storyboard */; };
 		D576F87623B6966000F75E12 /* CodeNotes2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576F87523B6966000F75E12 /* CodeNotes2_0Tests.swift */; };
@@ -42,10 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F21888E244F9FF000BBDE13 /* NotebookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookCell.swift; sourceTree = "<group>"; };
+		D5152406244D525600E900B3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D576F85B23B6965B00F75E12 /* CodeNotes2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeNotes2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D576F85E23B6965B00F75E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D576F86023B6965B00F75E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D576F86223B6965B00F75E12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D576F86523B6965B00F75E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D576F86A23B6965F00F75E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D576F86C23B6965F00F75E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,8 +118,9 @@
 				D58D86B423B723B300D366F0 /* Assets.xcassets */,
 				D576F86423B6965B00F75E12 /* Main.storyboard */,
 				D576F85E23B6965B00F75E12 /* AppDelegate.swift */,
-				D576F86223B6965B00F75E12 /* ViewController.swift */,
+				6F21888E244F9FF000BBDE13 /* NotebookCell.swift */,
 				D58D86B223B6C0C900D366F0 /* CreateNewSubjectViewController.swift */,
+				D5152406244D525600E900B3 /* CollectionViewController.swift */,
 				D576F89023B698AD00F75E12 /* NotesMenuViewController.swift */,
 				D576F89223B699AE00F75E12 /* PageViewController.swift */,
 				D576F86023B6965B00F75E12 /* SceneDelegate.swift */,
@@ -292,12 +295,13 @@
 				D5EC4C9C23B80B420045420F /* NotificationNameExtension.swift in Sources */,
 				D5B2945423BEBCA0009204FE /* Notebooks+CoreDataProperties.swift in Sources */,
 				D58D86B323B6C0C900D366F0 /* CreateNewSubjectViewController.swift in Sources */,
-				D576F86323B6965B00F75E12 /* ViewController.swift in Sources */,
 				D576F89323B699AE00F75E12 /* PageViewController.swift in Sources */,
 				D576F89123B698AD00F75E12 /* NotesMenuViewController.swift in Sources */,
+				6F21888F244F9FF000BBDE13 /* NotebookCell.swift in Sources */,
 				D5B2944F23BEBA29009204FE /* CodeNotes2.0.xcdatamodeld in Sources */,
 				D576F85F23B6965B00F75E12 /* AppDelegate.swift in Sources */,
 				D576F86123B6965B00F75E12 /* SceneDelegate.swift in Sources */,
+				D5152407244D525600E900B3 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ArihantJain.CodeNotes2-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeNotes2.0.app/CodeNotes2.0";
 			};
 			name = Debug;
@@ -541,7 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ArihantJain.CodeNotes2-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeNotes2.0.app/CodeNotes2.0";
 			};
 			name = Release;
