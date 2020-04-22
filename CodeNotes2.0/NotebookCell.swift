@@ -26,7 +26,7 @@ class NotebookCell: UICollectionViewCell {
     func convertDate(date: Date) -> String {
         let format = DateFormatter()
         format.timeZone = .current
-        format.dateFormat = "MM-dd-yyyy' at 'HH:mm a"
+        format.dateFormat = "MM-dd-yyyy"    //' at 'HH:mm a
         let dateString = format.string(from: date)
         return dateString
     }

@@ -204,7 +204,7 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-T8-SgH">
-                                            <rect key="frame" x="36" y="22" width="151" height="162"/>
+                                            <rect key="frame" x="36" y="22" width="151" height="165"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="162" id="cDA-mr-shf"/>
                                             </constraints>
@@ -213,7 +213,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="BNr-fd-T6m">
-                                            <rect key="frame" x="36" y="247" width="151" height="21"/>
+                                            <rect key="frame" x="36" y="250" width="151" height="25"/>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -228,7 +228,7 @@
                                         <constraint firstItem="RbJ-T8-SgH" firstAttribute="top" secondItem="vJj-Hf-E6K" secondAttribute="top" constant="22" id="KMU-F5-T19"/>
                                         <constraint firstAttribute="trailing" secondItem="RbJ-T8-SgH" secondAttribute="trailing" constant="52" id="W2F-Bc-Ymo"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="height" secondItem="vJj-Hf-E6K" secondAttribute="height" id="lEF-ft-7vJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="BNr-fd-T6m" secondAttribute="bottom" constant="46" id="mQQ-bh-NaO"/>
+                                        <constraint firstAttribute="bottom" secondItem="BNr-fd-T6m" secondAttribute="firstBaseline" constant="46" id="mQQ-bh-NaO"/>
                                         <constraint firstItem="RbJ-T8-SgH" firstAttribute="leading" secondItem="vJj-Hf-E6K" secondAttribute="leadingMargin" constant="28" id="sq3-tj-u6N"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerY" secondItem="vJj-Hf-E6K" secondAttribute="centerY" id="tCL-cl-5yJ"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerX" secondItem="vJj-Hf-E6K" secondAttribute="centerX" id="w6r-wQ-dIj"/>
@@ -257,8 +257,8 @@
                                             </constraints>
                                             <state key="normal" image="EditButton"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-wI-1rv" userLabel="Add">
-                                            <rect key="frame" x="753" y="9" width="63" height="62"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-wI-1rv" userLabel="Add">
+                                            <rect key="frame" x="753" y="10" width="63" height="61"/>
                                             <state key="normal" image="Add_Button"/>
                                             <connections>
                                                 <segue destination="tCW-5X-sNr" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="ogh-VM-LDL"/>
