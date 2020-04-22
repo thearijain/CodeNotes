@@ -12,6 +12,7 @@ import UIKit
 class NotebookCell: UICollectionViewCell {
     @IBOutlet var notebookButton: UIButton!
     @IBOutlet var notebookLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +20,15 @@ class NotebookCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
+    }
+    
+    //convert date to correct format
+    func convertDate(date: Date) -> String {
+        let format = DateFormatter()
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd' at 'HH:mm a"
+        let dateString = format.string(from: date)
+        return dateString
     }
     
 }

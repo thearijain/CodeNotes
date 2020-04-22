@@ -66,8 +66,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NotebookCell
         
-        //Update label with name every notebook in the array
+        //Update label with name and date for every notebook in the array
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
+        cell.dateLabel.text = cell.convertDate(date: arrayOfNotebooks[indexPath.row].date)
         
         return cell
     }
