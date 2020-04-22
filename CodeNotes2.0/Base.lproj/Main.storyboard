@@ -189,7 +189,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dMj-4h-dun">
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dMj-4h-dun" customClass="NotebookCell" customModule="CodeNotes2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="79" width="239" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vJj-Hf-E6K">
@@ -198,19 +198,38 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-5x-hRq">
                                             <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
-                                            <state key="normal" image="notebook"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                            <state key="normal" image="notebook">
+                                                <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-T8-SgH">
+                                            <rect key="frame" x="29" y="38" width="168" height="132"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="132" id="cDA-mr-shf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="width" secondItem="vJj-Hf-E6K" secondAttribute="height" multiplier="239:314" id="9aG-db-8mq"/>
+                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="top" secondItem="vJj-Hf-E6K" secondAttribute="top" constant="38" id="KMU-F5-T19"/>
+                                        <constraint firstAttribute="trailing" secondItem="RbJ-T8-SgH" secondAttribute="trailing" constant="42" id="W2F-Bc-Ymo"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="height" secondItem="vJj-Hf-E6K" secondAttribute="height" id="lEF-ft-7vJ"/>
+                                        <constraint firstItem="RbJ-T8-SgH" firstAttribute="leading" secondItem="vJj-Hf-E6K" secondAttribute="leadingMargin" constant="21" id="sq3-tj-u6N"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerY" secondItem="vJj-Hf-E6K" secondAttribute="centerY" id="tCL-cl-5yJ"/>
                                         <constraint firstItem="6ZU-5x-hRq" firstAttribute="centerX" secondItem="vJj-Hf-E6K" secondAttribute="centerX" id="w6r-wQ-dIj"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="239" height="314"/>
+                                <connections>
+                                    <outlet property="notebookButton" destination="6ZU-5x-hRq" id="agB-oz-3Xz"/>
+                                    <outlet property="notebookLabel" destination="RbJ-T8-SgH" id="GVo-F4-ChU"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="68t-EV-MSL">
@@ -273,7 +292,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQv-Ge-puI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1447" y="375"/>
+            <point key="canvasLocation" x="-1447.4820143884892" y="375"/>
         </scene>
     </scenes>
     <resources>

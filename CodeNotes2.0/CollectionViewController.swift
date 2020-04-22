@@ -64,7 +64,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Returns the cell object built on the main storyboard
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NotebookCell
+//        cell.notebookButton.setTitle(arrayOfNotebooks[indexPath.row].notebookName, for: .normal)
+        cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
+        
         return cell
     }
     
