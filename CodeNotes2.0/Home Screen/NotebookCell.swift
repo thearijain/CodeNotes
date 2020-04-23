@@ -31,4 +31,10 @@ class NotebookCell: UICollectionViewCell {
         return dateString
     }
     
+    //come back to this
+//    func scaleText(string: UILabel) -> UILabel {
+//        let string = string.font.withSize(self.view.frame.width * 0.018)
+//        return string
+//    }
+
 }
