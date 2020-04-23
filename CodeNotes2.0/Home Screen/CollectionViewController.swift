@@ -28,7 +28,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
            flow.minimumLineSpacing = 50
         
-        //Creates a new Unfiled Notees notebook if needed
+        //Creates a new Unfiled Notes notebook if needed
         if (arrayOfNotebooks.count == 0) {
             let newNotebook = Notebook(notebookName: "Unfiled Notes", date: Date())
             arrayOfNotebooks.append(newNotebook)
@@ -38,8 +38,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUI()
         }
-        
+    
     }
+    
    
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4L-IF-sxw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4L-IF-sxw">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEw-c5-sea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1447.4820143884892" y="1053.7769784172663"/>
+            <point key="canvasLocation" x="-695" y="1102"/>
         </scene>
         <!--Notes Menu View Controller-->
         <scene sceneID="5E2-Gf-jGR">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u57-q6-4J1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732.37410071942452" y="375"/>
+            <point key="canvasLocation" x="20.143884892086334" y="375"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vkd-Sb-pZa">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgQ-jM-mgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.71942446043165476" y="375"/>
+            <point key="canvasLocation" x="753.23741007194246" y="375"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="ptx-Rk-t75">
@@ -271,7 +271,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.20038461690000001" green="0.1960995197" blue="0.19598150249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.20000000000000001" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="xad-wI-1rv" firstAttribute="bottom" secondItem="aRg-P4-b0u" secondAttribute="bottomMargin" id="AoF-NZ-d76"/>
                                         <constraint firstItem="JVz-YQ-P0F" firstAttribute="centerY" secondItem="xad-wI-1rv" secondAttribute="centerY" id="BA8-OU-N5d"/>
@@ -297,13 +297,14 @@
                             <outlet property="delegate" destination="Q4L-IF-sxw" id="sxp-oW-0iC"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="OAa-yZ-nC0"/>
                     <connections>
                         <outlet property="CollectionViewOutlet" destination="Z2u-hi-67A" id="TWx-Gk-htv"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQv-Ge-puI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1447.4820143884892" y="375"/>
+            <point key="canvasLocation" x="-694.96402877697847" y="375"/>
         </scene>
     </scenes>
     <resources>
