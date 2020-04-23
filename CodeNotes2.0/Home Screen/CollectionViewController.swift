@@ -71,7 +71,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
         cell.notebookLabel.font = cell.notebookLabel.font.withSize(self.view.frame.width * 0.022)
         cell.dateLabel.text = cell.convertDate(date: arrayOfNotebooks[indexPath.row].date)
-        cell.dateLabel.font = cell.dateLabel.font.withSize(self.view.frame.width * 0.022)
+        cell.dateLabel.font = cell.dateLabel.font.withSize(self.view.frame.width * 0.05)
+        //((pow(self.view.frame.width, 2) + pow(self.view.frame.height, 2)).squareRoot() * 0.014)
         return cell
     }
     
