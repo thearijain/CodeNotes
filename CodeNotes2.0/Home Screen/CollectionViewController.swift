@@ -40,6 +40,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUI()
         }
+        
+        //MARK: --TEST
+        CollectionViewOutlet?.setCollectionViewLayout(CustomFlowLayout(), animated: false)
+
     
     }
     
@@ -102,11 +106,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Updates the UI of the homepage
     func updateUI() {
-//        CollectionViewOutlet.reloadData()
-//        print(setOfNotebookNames)
-        
-        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
-               CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
+//        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+//               CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
+//
+        let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+        CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
     }
     
     @objc func rotated() {
@@ -121,5 +125,45 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
                 layout.itemSize = CGSize(width: width - 16, height: 160)
                 layout.invalidateLayout()
         }
+    }
+}
+
+class CustomFlowLayout : UICollectionViewFlowLayout {
+    var insertingIndexPaths = [IndexPath]()
+
+    override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
+      super.prepare(forCollectionViewUpdates: updateItems)
+      
+      insertingIndexPaths.removeAll()
+
+      for update in updateItems {
+        if let indexPath = update.indexPathAfterUpdate,
+                           update.updateAction == .insert {
+          insertingIndexPaths.append(indexPath)
+        }
+      }
+        
+        print("PREPARE FUNCTION RAN")
+    }
+
+    override func finalizeCollectionViewUpdates() {
+      super.finalizeCollectionViewUpdates()
+        
+      insertingIndexPaths.removeAll()
+      print("SECOND FUNCTION RAN")
+    }
+
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+      let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+
+      //if insertingIndexPaths.contains(itemIndexPath) {
+        attributes?.alpha = 0.0
+        attributes?.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+      //attributes?.transform = CGAffineTransform(translationX: 0, y: 500.0)
+        print("ANIMATIONS~~")
+        print(attributes)
+      //}
+
+      return attributes
     }
 }
