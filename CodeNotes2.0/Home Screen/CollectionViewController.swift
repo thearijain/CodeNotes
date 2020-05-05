@@ -23,6 +23,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
+        
         //Sets the side inserts of the CollectionView
         let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
@@ -40,6 +42,24 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }
     
     }
+    
+    //test
+//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+//        if UIDevice.current.orientation.isLandscape,
+//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            print("landscape done")
+//            let width = view.frame.height - 22
+//            layout.itemSize = CGSize(width: width - 16, height: 160)
+//            layout.invalidateLayout()
+//        } else if UIDevice.current.orientation.isPortrait,
+//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            print("portrait done")
+//            let width = view.frame.width - 22
+//            layout.itemSize = CGSize(width: width - 16, height: 160)
+//            layout.invalidateLayout()
+//        }
+//    }
+    //end
     
    
     //Creates the CodeNotes header at the top of the collectionView
@@ -71,7 +91,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
         cell.notebookLabel.font = cell.notebookLabel.font.withSize(self.view.frame.width * 0.022)
         cell.dateLabel.text = cell.convertDate(date: arrayOfNotebooks[indexPath.row].date)
-        cell.dateLabel.font = cell.dateLabel.font.withSize(self.view.frame.width * 0.05)
+        cell.dateLabel.font = cell.dateLabel.font.withSize(self.view.frame.width * 0.01)
         //((pow(self.view.frame.width, 2) + pow(self.view.frame.height, 2)).squareRoot() * 0.014)
         return cell
     }
@@ -80,5 +100,19 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     func updateUI() {
         CollectionViewOutlet.reloadData()
         print(setOfNotebookNames)
+    }
+    
+    @objc func rotated() {
+        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+               print("landscape")
+               let width = view.frame.height - 22
+               layout.itemSize = CGSize(width: width - 16, height: 160)
+               layout.invalidateLayout()
+        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                print("portrait")
+                let width = view.frame.width - 22
+                layout.itemSize = CGSize(width: width - 16, height: 160)
+                layout.invalidateLayout()
+        }
     }
 }
