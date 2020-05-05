@@ -102,8 +102,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Updates the UI of the homepage
     func updateUI() {
-        CollectionViewOutlet.reloadData()
-        print(setOfNotebookNames)
+//        CollectionViewOutlet.reloadData()
+//        print(setOfNotebookNames)
+        
+        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+               CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
     }
     
     @objc func rotated() {
