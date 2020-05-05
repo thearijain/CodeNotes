@@ -42,7 +42,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }
         
         //MARK: --TEST
-        CollectionViewOutlet?.setCollectionViewLayout(CustomFlowLayout(), animated: false)
+        //CollectionViewOutlet?.setCollectionViewLayout(CustomFlowLayout(), animated: false)
 
     
     }
@@ -101,6 +101,12 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         cell.dateLabel.font = UIFont.preferredFont(forTextStyle: .body)
         cell.dateLabel.adjustsFontForContentSizeCategory = true
         //((pow(self.view.frame.width, 2) + pow(self.view.frame.height, 2)).squareRoot() * 0.014)
+        
+        UIView.animate(withDuration: 1.4, delay: 0.15 * Double(indexPath.row),  animations: {
+            cell.alpha = 0.0
+            cell.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
+        })
+        
         return cell
     }
     
