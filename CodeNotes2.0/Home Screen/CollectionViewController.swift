@@ -46,25 +46,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
     
     }
-    
-    //test
-//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-//        if UIDevice.current.orientation.isLandscape,
-//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("landscape done")
-//            let width = view.frame.height - 22
-//            layout.itemSize = CGSize(width: width - 16, height: 160)
-//            layout.invalidateLayout()
-//        } else if UIDevice.current.orientation.isPortrait,
-//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("portrait done")
-//            let width = view.frame.width - 22
-//            layout.itemSize = CGSize(width: width - 16, height: 160)
-//            layout.invalidateLayout()
-//        }
-//    }
-    //end
-    
    
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -114,9 +95,16 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     func updateUI() {
 //        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
 //               CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
-//
         let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+//        CollectionViewOutlet.layoutAttributesForItem(at: indexPath)?.alpha = 0.0
+//        CollectionViewOutlet.layoutAttributesForItem(at: indexPath)?.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
         CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
+        
+//        let attributes = UICollectionViewLayoutAttributes()
+//        UIView.animate(withDuration: 1.4, delay: 0.15 * Double(indexPath.row),  animations: {
+//            attributes.alpha = 0.0
+//            attributes.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
+//        })
     }
     
     @objc func rotated() {
