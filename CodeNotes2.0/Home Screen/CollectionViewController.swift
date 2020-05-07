@@ -57,18 +57,18 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
         
     //Sets the size of the cells
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
-        if UIDevice.current.orientation.isLandscape {
-            print("LANDSCAPE")
-            return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
-        } else if UIDevice.current.orientation.isPortrait {
-            print("PORTRAIT")
-            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
-        } else {
-            return CGSize(width: 0, height: 0)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+////        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
+//        if UIDevice.current.orientation.isLandscape {
+//            print("LANDSCAPE")
+//            return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+//        } else if UIDevice.current.orientation.isPortrait {
+//            print("PORTRAIT")
+//            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+//        } else {
+//            return CGSize(width: 0, height: 0)
+//        }
+//    }
     
     
     //Returns number of notebooks to put into the collectionView
@@ -112,15 +112,24 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 //        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 //            print("landscape")
 //            let width = view.frame.height
-//            layout.itemSize = CGSize(width: width / 4, height: view.frame.width / 4)
-//            layout.invalidateLayout()
+//            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+////            layout.invalidateLayout()
 //        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 //            print("portrait")
 //            let width = view.frame.width
 //            layout.itemSize = CGSize(width: width, height: view.frame.height)
-//            layout.invalidateLayout()
+////            layout.invalidateLayout()
 //        }
-       // collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
+////        collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
+        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            print("LANDSCAPE")
+            layout.itemSize =  CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            print("PORTRAIT")
+            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 3)
+        } else {
+            print("THIS SHOULD NEVER RUN")
+        }
     }
 }
 
