@@ -84,7 +84,6 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
     
     //Moves the view controller up and down depending on whether the keyboard is being used
     @objc func keyboardWillChange(notification: Notification) {
-        print("keyboard will show: \(notification.name.rawValue)")
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }

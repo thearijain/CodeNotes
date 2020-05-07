@@ -23,6 +23,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - TEST
         NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         //Sets the side inserts of the CollectionView
@@ -43,28 +44,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         //MARK: --TEST
         //CollectionViewOutlet?.setCollectionViewLayout(CustomFlowLayout(), animated: false)
-
-    
     }
-    
-    //test
-//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-//        if UIDevice.current.orientation.isLandscape,
-//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("landscape done")
-//            let width = view.frame.height - 22
-//            layout.itemSize = CGSize(width: width - 16, height: 160)
-//            layout.invalidateLayout()
-//        } else if UIDevice.current.orientation.isPortrait,
-//            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("portrait done")
-//            let width = view.frame.width - 22
-//            layout.itemSize = CGSize(width: width - 16, height: 160)
-//            layout.invalidateLayout()
-//        }
-//    }
-    //end
-    
    
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -78,7 +58,16 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
     //Sets the size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
+//        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
+        if UIDevice.current.orientation.isLandscape {
+            print("LANDSCAPE")
+            return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+        } else if UIDevice.current.orientation.isPortrait {
+            print("PORTRAIT")
+            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
     }
     
     
@@ -91,6 +80,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NotebookCell
         
+//        UIView.animate(withDuration: 1.4 , delay: 0.15 * Double(indexPath.row),  animations: {
+//               cell.alpha = 0.0
+//               cell.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
+//           })
+        
         //Update label with name and date for every notebook in the array
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
         //cell.notebookLabel.font = cell.notebookLabel.font.withSize(self.view.frame.width * 0.022)
@@ -102,74 +96,31 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         cell.dateLabel.adjustsFontForContentSizeCategory = true
         //((pow(self.view.frame.width, 2) + pow(self.view.frame.height, 2)).squareRoot() * 0.014)
         
-        UIView.animate(withDuration: 1.4, delay: 0.15 * Double(indexPath.row),  animations: {
-            cell.alpha = 0.0
-            cell.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
-        })
-        
         return cell
     }
     
     //Updates the UI of the homepage
     func updateUI() {
-//        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
-//               CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
-//
-        let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
-        CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
+        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+        CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
+
+//        let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+//        CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
     }
     
     @objc func rotated() {
-        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-               print("landscape")
-               let width = view.frame.height - 22
-               layout.itemSize = CGSize(width: width - 16, height: 160)
-               layout.invalidateLayout()
-        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                print("portrait")
-                let width = view.frame.width - 22
-                layout.itemSize = CGSize(width: width - 16, height: 160)
-                layout.invalidateLayout()
-        }
+//        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            print("landscape")
+//            let width = view.frame.height
+//            layout.itemSize = CGSize(width: width / 4, height: view.frame.width / 4)
+//            layout.invalidateLayout()
+//        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            print("portrait")
+//            let width = view.frame.width
+//            layout.itemSize = CGSize(width: width, height: view.frame.height)
+//            layout.invalidateLayout()
+//        }
+       // collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
     }
 }
 
-class CustomFlowLayout : UICollectionViewFlowLayout {
-    var insertingIndexPaths = [IndexPath]()
-
-    override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
-      super.prepare(forCollectionViewUpdates: updateItems)
-      
-      insertingIndexPaths.removeAll()
-
-      for update in updateItems {
-        if let indexPath = update.indexPathAfterUpdate,
-                           update.updateAction == .insert {
-          insertingIndexPaths.append(indexPath)
-        }
-      }
-        
-        print("PREPARE FUNCTION RAN")
-    }
-
-    override func finalizeCollectionViewUpdates() {
-      super.finalizeCollectionViewUpdates()
-        
-      insertingIndexPaths.removeAll()
-      print("SECOND FUNCTION RAN")
-    }
-
-    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-      let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
-
-      //if insertingIndexPaths.contains(itemIndexPath) {
-        attributes?.alpha = 0.0
-        attributes?.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-      //attributes?.transform = CGAffineTransform(translationX: 0, y: 500.0)
-        print("ANIMATIONS~~")
-        print(attributes)
-      //}
-
-      return attributes
-    }
-}
