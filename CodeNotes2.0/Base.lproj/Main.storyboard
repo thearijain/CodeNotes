@@ -181,16 +181,16 @@
                     <collectionView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Z2u-hi-67A">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.21881225709999999" green="0.21459782120000001" blue="0.21447747950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1910592616" green="0.1867361069" blue="0.1866191626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="DTA-T5-yvu">
                             <size key="itemSize" width="249" height="191"/>
-                            <size key="headerReferenceSize" width="834" height="79"/>
+                            <size key="headerReferenceSize" width="834" height="100"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="cell" id="dMj-4h-dun" customClass="NotebookCell" customModule="CodeNotes2_0" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="79" width="239" height="314"/>
+                                <rect key="frame" x="0.0" y="100" width="239" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vJj-Hf-E6K">
                                     <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
@@ -249,21 +249,18 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="68t-EV-MSL">
-                            <rect key="frame" x="0.0" y="0.0" width="834" height="79"/>
+                            <rect key="frame" x="0.0" y="0.0" width="834" height="100"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-P4-b0u">
-                                    <rect key="frame" x="0.0" y="0.0" width="834" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="834" height="100"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-YQ-P0F">
-                                            <rect key="frame" x="20" y="3" width="111" height="75"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="111" id="5o0-Ib-FnW"/>
-                                            </constraints>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-YQ-P0F">
+                                            <rect key="frame" x="18" y="12" width="108" height="63"/>
                                             <state key="normal" image="EditButton"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-wI-1rv" userLabel="Add">
-                                            <rect key="frame" x="753" y="10" width="63" height="61"/>
+                                            <rect key="frame" x="753" y="10" width="63" height="60"/>
                                             <state key="normal" image="Add_Button"/>
                                             <connections>
                                                 <segue destination="tCW-5X-sNr" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="ogh-VM-LDL"/>
@@ -275,17 +272,31 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UTS-x7-iVK">
+                                            <rect key="frame" x="594" y="78" width="208" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.2082886994" green="0.54883527759999995" blue="0.52420312170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <segments>
+                                                <segment title="Date Created"/>
+                                                <segment title="Name"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.47059822080000002" green="0.75921571249999997" blue="0.70250213149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="selectedSegmentTintColor" red="0.47095876930000002" green="0.75909906630000001" blue="0.70118588209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="changeNotebookOrder:" destination="Q4L-IF-sxw" eventType="valueChanged" id="OLa-ks-uQ4"/>
+                                            </connections>
+                                        </segmentedControl>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.20000000000000001" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.1910592616" green="0.1867361069" blue="0.1866191626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="xad-wI-1rv" firstAttribute="bottom" secondItem="aRg-P4-b0u" secondAttribute="bottomMargin" id="AoF-NZ-d76"/>
-                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="centerY" secondItem="xad-wI-1rv" secondAttribute="centerY" id="BA8-OU-N5d"/>
-                                        <constraint firstAttribute="bottom" secondItem="JVz-YQ-P0F" secondAttribute="bottom" constant="1" id="H6k-aP-PJp"/>
-                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="3" id="VJC-id-TML"/>
+                                        <constraint firstItem="xad-wI-1rv" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="10" id="DfM-Ea-ftY"/>
+                                        <constraint firstItem="xad-wI-1rv" firstAttribute="width" secondItem="KR2-C9-SUc" secondAttribute="height" multiplier="7:5" id="ReS-7H-UpT"/>
+                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="width" secondItem="KR2-C9-SUc" secondAttribute="height" multiplier="12:5" id="VJW-Rb-kmo"/>
                                         <constraint firstItem="KR2-C9-SUc" firstAttribute="centerX" secondItem="aRg-P4-b0u" secondAttribute="centerX" id="Y7B-vK-RBd"/>
-                                        <constraint firstAttribute="trailing" secondItem="xad-wI-1rv" secondAttribute="trailing" constant="18" id="peb-cH-BMw"/>
+                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="leading" secondItem="aRg-P4-b0u" secondAttribute="leading" constant="20" id="aNg-bG-QGm"/>
+                                        <constraint firstAttribute="trailing" secondItem="xad-wI-1rv" secondAttribute="trailing" constant="18" id="ge6-Lc-A4E"/>
+                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="12" id="kSx-tn-sAQ"/>
                                         <constraint firstItem="KR2-C9-SUc" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="24" id="qJg-Yc-cSw"/>
-                                        <constraint firstItem="JVz-YQ-P0F" firstAttribute="leading" secondItem="aRg-P4-b0u" secondAttribute="leading" constant="20" id="wLV-At-eFR"/>
                                     </constraints>
                                 </view>
                             </subviews>

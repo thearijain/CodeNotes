@@ -41,7 +41,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             setOfNotebookNames.insert("Unfiled Notes")
         }
         
-        //MARK: - TEST Creates fake intial notebooks
+        //MARK: - Creates fake intial notebooks - Delete later
         for _ in 0...5 {
             let newNotebook = Notebook(notebookName: "test", date: Date())
             arrayOfNotebooks.append(newNotebook)
@@ -49,15 +49,34 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         //Updates the UI
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
-            self.updateUI()
+            self.updateUIByCell()
         }
     }
+    
+    //Reorders the notebooks!
+    @IBAction func changeNotebookOrder(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            //code
+            print("FIRST ONE SELECTED")
+            break
+        case 1:
+            //code
+            print("SECOND ONE SELECTED")
+            break
+        default:
+            break
+        }
+    }
+    
     
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
             // Customize headerView here
+            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            layout?.headerReferenceSize = CGSize(width: view.frame.width, height: 100)
             return headerView
         }
         fatalError()
@@ -101,13 +120,18 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         return cell
     }
     
-    //Updates the UI of the homepage
-    func updateUI() {
+    //Updates the UI to add the newly created cell
+    func updateUIByCell() {
         let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
         CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
 
 //        let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
 //        CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
+    }
+    
+    //Updates the entire UI to accomodate notebook reordering
+    func updateEntireUI() {
+        CollectionViewOutlet.reloadData()
     }
     
     @objc func rotated() -> CGSize {
