@@ -61,21 +61,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
     //Sets the size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
-        
-        if UIDevice.current.orientation.isLandscape {
-            print("LANDSCAPE")
-            //layout.invalidateLayout()
-            //return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
             return rotated()
-        } else if UIDevice.current.orientation.isPortrait {
-            print("PORTRAIT")
-//            layout.invalidateLayout()
-//            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
-            return rotated()
-        } else {
-            return CGSize(width: 0, height: 0)
-        }
     }
     
     
@@ -120,13 +106,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             print("landscape")
             //let width = view.frame.height
-            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 4.5, height: CollectionViewOutlet.frame.height / 3)
             layout.invalidateLayout()
             return layout.itemSize
         } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             print("portrait")
             //let width = view.frame.width
-            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 4)
             layout.invalidateLayout()
             return layout.itemSize
         }
