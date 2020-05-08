@@ -13,19 +13,21 @@ struct Notebook {
     var date = Date()
 }
 
-var arrayOfNotebooks: [Notebook] = []
-var setOfNotebookNames = Set<String>()
+    var arrayOfNotebooks: [Notebook] = []
+    var setOfNotebookNames = Set<String>()
+    var numberOfAnimations = 0
+
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var CollectionViewOutlet: UICollectionView!
+    var notebookAnimation = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - TEST
+        //This makes sure the cells correctly resize depending on the orientation
         NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
         
         //Sets the side inserts of the CollectionView
         let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout
@@ -38,17 +40,19 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             arrayOfNotebooks.append(newNotebook)
             setOfNotebookNames.insert("Unfiled Notes")
         }
+        
+        //MARK: - TEST Creates fake intial notebooks
+        for _ in 0...5 {
+            let newNotebook = Notebook(notebookName: "test", date: Date())
+            arrayOfNotebooks.append(newNotebook)
+        }
+        
         //Updates the UI
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUI()
         }
-        
-        //MARK: --TEST
-        //CollectionViewOutlet?.setCollectionViewLayout(CustomFlowLayout(), animated: false)
-
-    
     }
-   
+    
     //Creates the CodeNotes header at the top of the collectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
@@ -74,10 +78,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NotebookCell
         
-//        UIView.animate(withDuration: 1.4 , delay: 0.15 * Double(indexPath.row),  animations: {
-//               cell.alpha = 0.0
-//               cell.transform = CGAffineTransform(translationX: 0.0, y: 500.0)
-//           })
+        //Only animates the appearances of preexisting notebooks
+        if (numberOfAnimations <= arrayOfNotebooks.count && numberOfAnimations < 12) {
+            UIView.animate(withDuration: 1.4 , delay: 0.15 * Double(indexPath.row),  animations: {
+                   cell.alpha = 0.0
+                   cell.transform = CGAffineTransform(translationX: 0.0, y: -2000)
+               })
+            numberOfAnimations += 1
+        }
         
         //Update label with name and date for every notebook in the array
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
@@ -104,14 +112,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     @objc func rotated() -> CGSize {
         if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            print("landscape")
-            //let width = view.frame.height
             layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 4.5, height: CollectionViewOutlet.frame.height / 3)
             layout.invalidateLayout()
             return layout.itemSize
         } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            print("portrait")
-            //let width = view.frame.width
             layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 4)
             layout.invalidateLayout()
             return layout.itemSize
