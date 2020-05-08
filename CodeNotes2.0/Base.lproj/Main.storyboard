@@ -189,14 +189,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dMj-4h-dun" customClass="NotebookCell" customModule="CodeNotes2_0" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="cell" id="dMj-4h-dun" customClass="NotebookCell" customModule="CodeNotes2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="79" width="239" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vJj-Hf-E6K">
                                     <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-5x-hRq">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-5x-hRq">
                                             <rect key="frame" x="0.0" y="0.0" width="239" height="314"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                             <state key="normal" image="notebook">
