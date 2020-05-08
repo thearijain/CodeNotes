@@ -26,6 +26,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         //MARK: - TEST
         NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         
+        
         //Sets the side inserts of the CollectionView
         let flow = CollectionViewOutlet.collectionViewLayout as! UICollectionViewFlowLayout
            flow.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
@@ -61,12 +62,17 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     //Sets the size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: ((CollectionViewOutlet.frame.size.width) / 4), height: ((CollectionViewOutlet.frame.size.height) / 4))
+        
         if UIDevice.current.orientation.isLandscape {
             print("LANDSCAPE")
-            return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+            //layout.invalidateLayout()
+            //return CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+            return rotated()
         } else if UIDevice.current.orientation.isPortrait {
             print("PORTRAIT")
-            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+//            layout.invalidateLayout()
+//            return CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+            return rotated()
         } else {
             return CGSize(width: 0, height: 0)
         }
@@ -110,19 +116,22 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 //        CollectionViewOutlet?.performBatchUpdates({CollectionViewOutlet?.insertItems(at: [indexPath])}, completion: nil)
     }
     
-    @objc func rotated() {
-//        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("landscape")
-//            let width = view.frame.height
-//            layout.itemSize = CGSize(width: width / 4, height: view.frame.width / 4)
-//            layout.invalidateLayout()
-//        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            print("portrait")
-//            let width = view.frame.width
-//            layout.itemSize = CGSize(width: width, height: view.frame.height)
-//            layout.invalidateLayout()
-//        }
-       // collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
+    @objc func rotated() -> CGSize {
+        if UIDevice.current.orientation.isLandscape, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            print("landscape")
+            //let width = view.frame.height
+            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 3.5, height: CollectionViewOutlet.frame.height / 3)
+            layout.invalidateLayout()
+            return layout.itemSize
+        } else if UIDevice.current.orientation.isPortrait, let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            print("portrait")
+            //let width = view.frame.width
+            layout.itemSize = CGSize(width: CollectionViewOutlet.frame.width / 4.9, height: CollectionViewOutlet.frame.height / 4)
+            layout.invalidateLayout()
+            return layout.itemSize
+        }
+        return CGSize(width: 0, height: 0)
+        //collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
     }
 }
 
