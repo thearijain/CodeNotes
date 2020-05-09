@@ -46,7 +46,7 @@ class CreateNewSubjectViewController: UIViewController, UITextFieldDelegate {
         } else {
             //Creates new notebook and adds it to the list of notebooks and name to the set of names
             let newNotebook = Notebook(notebookName: nameOfSubject.text!, date: Date())
-            arrayOfNotebooks.append(newNotebook)
+            arrayOfNotebooks.insert(newNotebook, at: 1)
             setOfNotebookNames.insert(nameOfSubject.text!)
             
             //Updates the UI

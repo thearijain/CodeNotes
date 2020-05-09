@@ -51,17 +51,24 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         NotificationCenter.default.addObserver(forName: .updateInterface, object: nil, queue: OperationQueue.main) { (notification) in
             self.updateUIByCell()
         }
+
+    }
+    
+    //Allows you to drag and drop notebooks !
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let temp = arrayOfNotebooks.remove(at: sourceIndexPath.item)
+        arrayOfNotebooks.insert(temp, at: destinationIndexPath.item)
     }
     
     //Reorders the notebooks!
     @IBAction func changeNotebookOrder(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            //code
+            //Date created
             print("FIRST ONE SELECTED")
             break
         case 1:
-            //code
+            //Name
             print("SECOND ONE SELECTED")
             break
         default:
@@ -97,15 +104,15 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NotebookCell
         
-        //Only animates the appearances of preexisting notebooks
-        if (numberOfAnimations <= arrayOfNotebooks.count && numberOfAnimations < 12) {
-            UIView.animate(withDuration: 1.4 , delay: 0.15 * Double(indexPath.row),  animations: {
-                   cell.alpha = 0.0
-                   cell.transform = CGAffineTransform(translationX: 0.0, y: -2000)
-               })
-            numberOfAnimations += 1
-        }
-        
+        //Only animates the appearances of preexisting notebooks -> fuck this code
+//        if (numberOfAnimations <= arrayOfNotebooks.count && numberOfAnimations < 12) {
+//            UIView.animate(withDuration: 1.4 , delay: 0.15 * Double(indexPath.row),  animations: {
+//                   cell.alpha = 0.0
+//                   cell.transform = CGAffineTransform(translationX: 0.0, y: -2000)
+//               })
+//            numberOfAnimations += 1
+//        }
+//
         //Update label with name and date for every notebook in the array
         cell.notebookLabel.text = arrayOfNotebooks[indexPath.row].notebookName
         //cell.notebookLabel.font = cell.notebookLabel.font.withSize(self.view.frame.width * 0.022)
@@ -122,7 +129,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     //Updates the UI to add the newly created cell
     func updateUIByCell() {
-        let insertedIndexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
+        let insertedIndexPath = IndexPath(item: 1, section: 0)
         CollectionViewOutlet?.insertItems(at: [insertedIndexPath])
 
 //        let indexPath = IndexPath(item: arrayOfNotebooks.count - 1, section: 0)
@@ -145,7 +152,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             return layout.itemSize
         }
         return CGSize(width: 0, height: 0)
-        //collectionView(UICollectionView, UICollectionViewLayout, IndexPath)
     }
 }
 
