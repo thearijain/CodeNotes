@@ -13,9 +13,10 @@ struct Notebook {
     var date = Date()
 }
 
-    var arrayOfNotebooks: [Notebook] = []
-    var setOfNotebookNames = Set<String>()
-    var numberOfAnimations = 0
+//MARK: - Global Variables (Super Important!)
+var arrayOfNotebooks: [Notebook] = []
+var setOfNotebookNames = Set<String>()
+var numberOfAnimations = 0
 
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -25,6 +26,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setBackground()
         
         //This makes sure the cells correctly resize depending on the orientation
         NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -39,6 +42,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             let newNotebook = Notebook(notebookName: "Unfiled Notes", date: Date())
             arrayOfNotebooks.append(newNotebook)
             setOfNotebookNames.insert("Unfiled Notes")
+            //delete
         }
         
         //MARK: - Creates fake intial notebooks - Delete later
@@ -52,6 +56,17 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             self.updateUIByCell()
         }
 
+    }
+    
+    //Sets the background of the CollectionView
+    func setBackground() {
+        let imageView : UIImageView = {
+            let iv = UIImageView()
+            iv.image = UIImage(named:"NotebookBackground")
+            iv.contentMode = .scaleAspectFill
+            return iv
+        }()
+        self.CollectionViewOutlet?.backgroundView = imageView
     }
     
     //Allows you to drag and drop notebooks !

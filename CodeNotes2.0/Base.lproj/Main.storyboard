@@ -277,7 +277,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.2082886994" green="0.54883527759999995" blue="0.52420312170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <segments>
-                                                <segment title="Date Created"/>
+                                                <segment title="Date"/>
                                                 <segment title="Name"/>
                                             </segments>
                                             <color key="tintColor" red="0.47059822080000002" green="0.75921571249999997" blue="0.70250213149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -287,7 +287,8 @@
                                             </connections>
                                         </segmentedControl>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.1910592616" green="0.1867361069" blue="0.1866191626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="xad-wI-1rv" firstAttribute="top" secondItem="aRg-P4-b0u" secondAttribute="top" constant="10" id="DfM-Ea-ftY"/>
                                         <constraint firstItem="xad-wI-1rv" firstAttribute="width" secondItem="KR2-C9-SUc" secondAttribute="height" multiplier="7:5" id="ReS-7H-UpT"/>
@@ -300,7 +301,8 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.21881225709999999" green="0.21459782120000001" blue="0.21447747950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="aRg-P4-b0u" firstAttribute="leading" secondItem="68t-EV-MSL" secondAttribute="leadingMargin" constant="-8" id="gCI-wi-pPh"/>
                                 <constraint firstItem="aRg-P4-b0u" firstAttribute="centerX" secondItem="68t-EV-MSL" secondAttribute="centerX" id="pKo-3T-z4Y"/>
